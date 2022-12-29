@@ -8,11 +8,14 @@ const App = () => {
   // first player
   const [opponent, setOpponent] = useState("❎")
   const switchOpponent = (player) => {
-    // second player
-    setOpponent(opponent === "❎" ? "🅾️" : "❎")
-    const updateSquare = [...squares]
-    updateSquare[player] = opponent
-    setSquares(updateSquare)
+    // conditional to prevent multiple entries on same box
+    if(squares[player] === null) {
+      // second player
+      setOpponent(opponent === "❎" ? "🅾️" : "❎")
+      const updateSquare = [...squares]
+      updateSquare[player] = opponent
+      setSquares(updateSquare)
+    }
   }
 
   return (

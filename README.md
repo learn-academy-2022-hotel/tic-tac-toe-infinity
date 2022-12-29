@@ -37,12 +37,12 @@ When creating a project it is important to think about organization of your code
 ```  
 
 - As a user, I can click on a square to mark it.
-  - onClick attribute to add "X"
-  - pass index as props to Square.js
-  - 
+  - create function to update value at current index to "X"
+  - pass index, value, custom function as props to Square.js
+  - onClick attribute to perform function call to display "X" on grid
   
 - As a user, my partner can click on a square after me and see their mark.
-  - onClick attribute to add "O"
+  - modify function to update value at current index to "O"
 
 - As a user, I can't click on a square that has already been marked.
 
