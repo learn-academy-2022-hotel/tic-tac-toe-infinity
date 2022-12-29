@@ -3,7 +3,17 @@ import Square from './components/Square'
 import './App.css'
 
 const App = () => {
+  // grid
   const [squares, setSquares] = useState(Array(9).fill(null))
+  // first player
+  const [opponent, setOpponent] = useState("❎")
+  const switchOpponent = (player) => {
+    // second player
+    setOpponent(opponent === "❎" ? "🅾️" : "❎")
+    const updateSquare = [...squares]
+    updateSquare[player] = opponent
+    setSquares(updateSquare)
+  }
 
   return (
     <>
@@ -11,7 +21,12 @@ const App = () => {
       <div className="grid">
         {squares.map((value, index) => 
           <div key={index}>
-            <Square />
+            <Square 
+              squares={squares}
+              index={index} 
+              value={value}
+              switchOpponent={switchOpponent}
+            />
           </div>
         )}
       </div>

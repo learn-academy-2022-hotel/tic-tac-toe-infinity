@@ -38,6 +38,8 @@ When creating a project it is important to think about organization of your code
 
 - As a user, I can click on a square to mark it.
   - onClick attribute to add "X"
+  - pass index as props to Square.js
+  - 
   
 - As a user, my partner can click on a square after me and see their mark.
   - onClick attribute to add "O"
