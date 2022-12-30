@@ -7,12 +7,20 @@ const Square = (props) => {
   }
 
   return (
-    <div 
-      className="square"
-      onClick={handleClick}
-    >
-      {props.value}
-    </div>
+    <>
+      {
+        props.winner ?
+          <div className="square">
+            {props.value}
+          </div> :
+          <div 
+            className="square"
+            onClick={handleClick}
+          >
+            {props.value}
+          </div>
+      }
+    </>
   )
 }
 export default Square

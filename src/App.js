@@ -3,13 +3,15 @@ import Square from './components/Square'
 import './App.css'
 
 const App = () => {
+  
   // grid
   const [squares, setSquares] = useState(Array(9).fill(null))
   // first player
   const [opponent, setOpponent] = useState("❎")
+  // winning message
   const [winner, setWinner] = useState("")
-  const winning = () => {
-    const lines = [
+  const playerWon = () => {
+    const winning = [
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
@@ -19,17 +21,16 @@ const App = () => {
       [0, 4, 8],
       [2, 4, 6],
     ]
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
+    for (let i = 0; i < winning.length; i++) {
+      const [a, b, c] = winning[i]
       if (squares[a] === "❎" && squares[a] === squares[b] && squares[a] === squares[c]) {
         setWinner("❎")
       } else if (squares[a] === "🅾️" && squares[a] === squares[b] && squares[a] === squares[c]) {
         setWinner("🅾️")
       }
     }
-    return null;
+    return null
   }
-
   const switchOpponent = (player) => {
     // conditional to prevent multiple entries on same box
     if(squares[player] === null) {
@@ -39,9 +40,8 @@ const App = () => {
       updateSquare[player] = opponent
       setSquares(updateSquare)
     }
-    winning()
+    playerWon()
   }
-
 
   return (
     <>
@@ -51,7 +51,7 @@ const App = () => {
         {squares.map((value, index) => 
           <div key={index}>
             <Square 
-              squares={squares}
+              winner={winner}
               index={index} 
               value={value}
               switchOpponent={switchOpponent}
