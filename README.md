@@ -51,8 +51,10 @@ When creating a project it is important to think about organization of your code
   - create a function with a variable that stores different winning combinations and updates the winner variable
 
 - As a user, I can't continue playing the game after the game has been won.
+  - ternary that does not have onclick on grid if winner present
 
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
+
 - As a user, I can click on a restart button that will clear the game board.
 
 ### 🏔 Stretch Goals
