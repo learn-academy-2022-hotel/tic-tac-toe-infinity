@@ -5,7 +5,7 @@ import './App.css'
 const App = () => {
   
   // grid
-  const [squares, setSquares] = useState(Array(9).fill(null))
+  const [squares, setSquares] = useState(Array(9).fill("🤪"))
   // first player
   const [opponent, setOpponent] = useState("❎")
   // winning message
@@ -33,7 +33,7 @@ const App = () => {
   }
   const switchOpponent = (player) => {
     // conditional to prevent multiple entries on same box
-    if(squares[player] === null) {
+    if(squares[player] === "🤪") {
       // second player
       setOpponent(opponent === "❎" ? "🅾️" : "❎")
       const updateSquare = [...squares]
